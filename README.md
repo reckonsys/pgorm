@@ -24,7 +24,7 @@ Performance.
 
 # How do we get there?
 
-Understand postgreSQL (External data wrappers, table inheritance, extensions, yada yada yada)
-Understand dataclasses, type hints, lazy evaluation & asyncio
-Agree sensible defaults
-Implement
+* Understand postgreSQL (External data wrappers, table inheritance, extensions, yada yada yada)
+* Understand dataclasses, type hints, lazy evaluation & asyncio
+* Agree sensible defaults
+* Implement
