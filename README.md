@@ -1,6 +1,6 @@
 # pgorm
 
-An ambitious PostgreSQL ORM in pure python using dataclasses, type hints, asyncio
+An ambitious PostgreSQL ORM in pure python 3.7+ using asyncio, dataclasses & type hints
 
 # Why pgORM?
 
