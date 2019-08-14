@@ -3,7 +3,7 @@ from dataclasses import dataclass, is_dataclass
 from asyncpg.connection import Connection
 
 # Implement all commands from:
-# https://www.postgresql.org/docs/current/sql-commands.html
+# https://www.postgresql.org/docs/devel/sql-commands.html
 
 
 @dataclass
