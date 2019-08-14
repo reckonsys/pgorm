@@ -16,6 +16,4 @@ class Table(Resource):
 
     @classmethod
     def sql_create(cls) -> str:
-        a = f'CREATE {cls.pg_repr()} "{cls.name()}" ({cls.sql_fields()});'
-        print(a)
-        return a
+        return f'CREATE {cls.pg_repr()} "{cls.name()}" ({cls.sql_fields()});'
