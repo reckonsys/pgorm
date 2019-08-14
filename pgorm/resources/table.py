@@ -3,17 +3,19 @@
 
 '''Table related utilities.'''
 
-from pgorm.resources.resource import Resource
 from dataclasses import dataclass
+
+from pgorm.resources.constants import TABLE
+from pgorm.resources.resource import Resource
 
 
 @dataclass
 class Table(Resource):
 
-    @classmethod
-    def pg_repr(cls) -> str:
-        return 'TABLE'
+    @staticmethod
+    def pg_repr() -> str:
+        return TABLE
 
     @classmethod
     def sql_create(cls) -> str:
-        return f'CREATE {cls.pg_repr()} "{cls.name()}" ({cls.sql_fields()});'
+        return f'"{cls.name()}" ({cls.sql_fields()});'

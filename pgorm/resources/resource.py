@@ -1,15 +1,16 @@
-from abc import ABCMeta, abstractclassmethod
 from dataclasses import dataclass, fields
+from abc import ABCMeta, abstractstaticmethod
 
 from inflection import pluralize
+from pgorm.resources.constants import RESOURCE
 
 
 @dataclass
 class Resource(metaclass=ABCMeta):
 
-    @abstractclassmethod
-    def pg_repr(cls) -> str:
-        return 'RESOURCE'
+    @abstractstaticmethod
+    def pg_repr() -> str:
+        return RESOURCE
 
     @classmethod
     def name(cls) -> str:

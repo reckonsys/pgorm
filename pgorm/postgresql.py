@@ -1,6 +1,7 @@
-from dataclasses import dataclass, is_dataclass
+from dataclasses import dataclass
 
 from asyncpg.connection import Connection
+from pgorm.resources.resource import Resource
 
 # Implement all commands from:
 # https://www.postgresql.org/docs/devel/sql-commands.html
@@ -28,7 +29,8 @@ class PostgreSQL:
     def register_models(self, models):
         return [self.register_model(model) for model in models]
 
-    async def create_table(self, model) -> str:
-        if not is_dataclass(model):
+    async def create(self, resource: Resource) -> Resource:
+        if not issubclass(resource, Resource):
             raise TypeError('Dataclass is required')
-        return await self.connection.execute(model.sql_create())
+        return await self.connection.execute(
+            f'CREATE {resource.pg_repr()} {resource.sql_create()}')
