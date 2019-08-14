@@ -13,9 +13,5 @@ from pgorm.resources.resource import Resource
 class Table(Resource):
 
     @staticmethod
-    def pg_repr() -> str:
+    def _pg_repr() -> str:
         return TABLE
-
-    @classmethod
-    def sql_create(cls) -> str:
-        return f'"{cls.name()}" ({cls.sql_fields()});'

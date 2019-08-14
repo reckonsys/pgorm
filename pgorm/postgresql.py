@@ -33,5 +33,4 @@ class PostgreSQL:
     async def create(self, resource: Resource) -> Resource:
         if not isclass(resource) or not issubclass(resource, Resource):
             raise TypeError(f'Should be a subclass of {Resource}')
-        return await self.connection.execute(
-            f'CREATE {resource.pg_repr()} {resource.sql_create()}')
+        return await self.connection.execute(resource._sql_create())

@@ -9,20 +9,24 @@ from pgorm.resources.constants import RESOURCE
 class Resource(metaclass=ABCMeta):
 
     @abstractstaticmethod
-    def pg_repr() -> str:
+    def _pg_repr() -> str:
         return RESOURCE
 
     @classmethod
-    def name(cls) -> str:
+    def _name(cls) -> str:
         return cls.__name__.lower()
 
     @classmethod
-    def name_plural(cls) -> str:
-        return pluralize(cls.name())
+    def _name_plural(cls) -> str:
+        return pluralize(cls._name())
 
     @classmethod
-    def sql_fields(cls) -> str:
+    def _sql_fields(cls) -> str:
         return ', '.join([f.sql_def for f in fields(cls)])
+
+    @classmethod
+    def _sql_create(cls) -> str:
+        return f'CREATE {cls._pg_repr()} "{cls._name()}" ({cls._sql_fields()});'  # noqa
 
     class Meta:
         pass
