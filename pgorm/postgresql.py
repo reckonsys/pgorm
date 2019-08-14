@@ -1,3 +1,4 @@
+from inspect import isclass
 from dataclasses import dataclass
 
 from asyncpg.connection import Connection
@@ -30,7 +31,7 @@ class PostgreSQL:
         return [self.register_model(model) for model in models]
 
     async def create(self, resource: Resource) -> Resource:
-        if not issubclass(resource, Resource):
-            raise TypeError('Dataclass is required')
+        if not isclass(resource) or not issubclass(resource, Resource):
+            raise TypeError(f'Should be a subclass of {Resource}')
         return await self.connection.execute(
             f'CREATE {resource.pg_repr()} {resource.sql_create()}')
