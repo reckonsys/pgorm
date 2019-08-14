@@ -5,7 +5,7 @@ __VERSION__ = '0.0.1'
 setup(
     name='pgorm',
     version=__VERSION__,
-    description="An ambitious PostgreSQL ORM in pure python 3.7+ using asyncio, dataclasses & type hints",  # noqa
+    description="A n00by PostgreSQL ORM in pure python 3.7+ which probably abuses asyncio, dataclasses & type hints",  # noqa
     long_description="Coming to nearby PostgreSQL DBs soon...",
     url='https://github.com/reckonsys/pgorm',
     author='dhilipsiva',
