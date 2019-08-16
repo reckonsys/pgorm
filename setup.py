@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__VERSION__ = '201908.1'
+__VERSION__ = '201908.3'
 
 setup(
     name='pgorm',
