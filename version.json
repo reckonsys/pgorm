@@ -1,0 +1,10 @@
+{
+    "version": {
+        "year": 2019,
+        "build": 1,
+        "release": "a",
+        "release_number": 2,
+        "post_number": 3
+    },
+    "files": ["one.txt"]
+}
