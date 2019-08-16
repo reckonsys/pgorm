@@ -2,6 +2,8 @@
 
 A n00by PostgreSQL ORM in pure python 3.7+ which probably abuses asyncio, dataclasses & type hints
 
+[![Version v201908.1a][version_img]][version_ref]
+
 # Why pgORM?
 
 When building a typical web service with python, more often than not, one tends to choose an ORM for their data layer. These days, because of frameworks like Ember, React & Angular, developers often find themselves writing JSON endpoints more often than rendering a HTML page. Therein comes a need for serializers. After building a couple of dozens of webservices ourselves, we asked why do we need to keep defining the same data multiple times (once when defining your models, and then when defining serializers and then for defining forms)? Why not just define it once and use it everywhere?
@@ -28,3 +30,7 @@ Performance.
 * Understand dataclasses, type hints, lazy evaluation & asyncio
 * Agree sensible defaults
 * Implement
+
+
+[version_img]: https://img.shields.io/static/v1.svg?label=Version&message=201908.1a&color=blue
+[version_ref]: https://pypi.org/project/pycalver/
