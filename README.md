@@ -2,7 +2,7 @@
 
 A n00by PostgreSQL ORM in pure python 3.7+ which probably abuses asyncio, dataclasses & type hints
 
-[![Version v201908.1a][version_img]][version_ref]
+[![Version v201908.1][version_img]][version_ref]
 
 # Why pgORM?
 
@@ -32,5 +32,5 @@ Performance.
 * Implement
 
 
-[version_img]: https://img.shields.io/static/v1.svg?label=Version&message=201908.1a&color=blue
+[version_img]: https://img.shields.io/static/v1.svg?label=Version&message=201908.1&color=blue
 [version_ref]: https://pypi.org/project/pycalver/
