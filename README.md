@@ -22,6 +22,14 @@ It's good to know what a function returns (or expects). Leads to readable code. 
 
 Performance.
 
+# Why Now?
+
+Becasue python 2.x is reaching its end of life on Jan 2020. When people are looking to migrate the code, they might find pgORM interesting.
+
+# But, Why?
+
+Because python is fun.
+
 # How do we get there?
 
 * Understand postgreSQL (External data wrappers, table inheritance, extensions, yada yada yada)
