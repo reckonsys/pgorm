@@ -51,6 +51,7 @@ class Field(_Field):
 
     @property
     def sql_def(self) -> str:
+        '''Get an SQL definition of a Field.'''
         return f'"{self.name}" {self.pg_type}'
 
 

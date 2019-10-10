@@ -1,5 +1,5 @@
 from inspect import isclass
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 
 from asyncpg.connection import Connection
 from pgorm.resources.resource import Resource
@@ -34,3 +34,12 @@ class PostgreSQL:
         if not isclass(resource) or not issubclass(resource, Resource):
             raise TypeError(f'Should be a subclass of {Resource}')
         return await self.connection.execute(resource._sql_create())
+
+    async def insert(self, resource: Resource) -> Resource:
+        _fields = [f.name for f in fields(resource)]
+        _vars = ', '.join([f'${num}' for (num, item) in enumerate(_fields, 1)])
+        args = [getattr(resource, f) for f in _fields]
+        _fields = ', '.join(_fields)
+        stmt = f'INSERT INTO "{resource.__class__._name()}" ({_fields}) VALUES ({_vars})'  # noqa
+        await self.connection.execute(stmt, *args)
+        return resource
